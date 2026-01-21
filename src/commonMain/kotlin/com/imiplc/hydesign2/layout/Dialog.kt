@@ -21,7 +21,7 @@ fun Dialog(
         properties = properties,
     ) {
         Card {
-            Column(modifier = Modifier.padding(8.dp)) {
+            Column(modifier = Modifier.padding(16.dp)) {
                 Title(title)
             }
         }
