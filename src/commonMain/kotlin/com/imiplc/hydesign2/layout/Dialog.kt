@@ -2,6 +2,7 @@ package com.imiplc.hydesign2.layout
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -15,6 +16,7 @@ fun Dialog(
     title: String,
     onDismissRequest: () -> Unit,
     properties: DialogProperties = DialogProperties(),
+    content: @Composable ColumnScope.() -> Unit = {},
 ) {
     Dialog(
         onDismissRequest = onDismissRequest,
@@ -23,6 +25,8 @@ fun Dialog(
         Card {
             Column(modifier = Modifier.padding(16.dp)) {
                 Title(title)
+                Spacer(modifier = Modifier.padding(top = 8.dp))
+                content()
             }
         }
     }
